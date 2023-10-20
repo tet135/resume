@@ -1,0 +1,106 @@
+<section>
+    <h1>IT Languages: what you need to know</h1>
+    {{#with web}}
+    <ul>
+        {{#each languages}}
+        <li>
+            <em>
+                {{>title data=name big=true}}
+            </em>
+            <div>
+                <i>
+                    Version: {{version}}
+                </i>
+            </div>
+            <p>
+                {{description}}
+            </p>
+            <div>
+                {{#if elements}}
+                {{>title data="Elements:" }}
+                <br>
+                <div>
+                    <ul>
+                        {{#each elements}}
+                        <li>
+                            {{>attr }}
+                            <div>
+                                Attributes:
+                            </div>
+                            <br>
+                            <ul>
+                                {{#each attributes}}
+                                <li>
+                                    {{>attr }}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+            </div>
+            <div>
+                {{#if properties}}
+                {{>title data="Properties:" }}
+                <br>
+                <div>
+                    <ul>
+                        {{#each properties}}
+                        <li>
+                            {{>attr }}
+                            <div>
+                                Values:
+                            </div>
+                            <br>
+                            <ul>
+                                {{#each values}}
+                                <li>
+                                    {{>attr name=value }}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+            </div>
+            <div>
+                {{#if functions}}
+                {{>title data="Functions:" }}
+                <br>
+                <div>
+                    <ul>
+                        {{#each functions}}
+                        <li>
+                            {{>attr }}
+                            <div>
+                                Parameters:
+                            </div>
+                            <br>
+                            <ul>
+                                {{#each parameters}}
+                                <li>
+                                    {{>attr }}
+                                    <div>
+                                        Type: {{type}}
+                                    </div>
+                                    <br>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+            </div>
+        </li>
+        <hr>
+        {{/each}}
+    </ul>
+
+    {{/with}}
+</section>
