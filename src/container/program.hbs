@@ -1,0 +1,50 @@
+<h1>Program</h1>
+<section>
+    {{#with program}}
+    {{>title data='Excursion' big=true }}
+    {{#with excursion}}
+    {{>title data=name}}
+    <br>
+    {{>address }}
+    <br>
+    <div>
+        {{>date data=date}}
+    </div>
+    <div>
+        {{>title data='Program'}}
+        <ol type="1">
+            {{#each program}}
+            <li>
+                {{>title data=name}}
+                <div>
+                    Topic: {{type}}
+                </div>
+                <br>
+                <div>
+                    Duration:
+                    <time>
+                        {{duration}}
+                    </time>
+                    hours
+                </div>
+                <br>
+                <div>
+                    <b>Details:</b>
+                </div>
+                <br>
+                <div>
+                    {{#with details}}
+                    {{>museum mus=true}}
+                    {{>museum mus=false}}
+                    {{/with}}
+                    <br>
+                    {{>guide data=details.guide}}
+                </div>
+            </li>
+            {{>line }}
+            {{/each}}
+        </ol>
+    </div>
+    {{/with}}
+    {{/with}}
+</section>

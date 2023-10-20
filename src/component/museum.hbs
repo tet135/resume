@@ -1,0 +1,65 @@
+{{#if mus}}
+<div>
+    {{#with museum}}
+    {{>cite}}
+    <br>
+    {{>address }}
+    <br>
+    <div>
+        <b>
+            Exhibition:
+        </b>
+        <br>
+        <br>
+        <ol>
+            {{#each exhibits}}
+            <li>
+                {{>cite }}
+                <br>
+                <div>
+                    {{#if artist}}
+                    Artist: {{artist}}
+                    {{else}}
+                    Author is unknown
+                    {{/if}}
+                </div>
+                <p>
+                    {{description}}
+                </p>
+                <div>
+                    {{#if audio_guide}}
+                    <i>
+                        Audio guide is available
+                    </i>
+                    {{esle}}
+                    {{/if}}
+                </div>
+            </li>
+            <br>
+            {{/each}}
+        </ol>
+    </div>
+    {{/with}}
+</div>
+{{else}}
+<div>
+    {{#with venue}}
+    {{>cite}}
+    <br>
+    {{>address }}
+    <br>
+    {{/with}}
+    {{#if performers}}
+    <div>
+        <b>Performers:</b>
+    </div>
+    <ul>
+        {{#each performers}}
+        <li>
+            {{name}}: {{type}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>
+{{/if}}
