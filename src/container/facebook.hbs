@@ -1,0 +1,38 @@
+<h1>facebook</h1>
+<section>
+    {{#each users}}
+    <div class="card" style="width: 36rem;">
+        <div class="card-body">
+            {{>user }}
+            <a href="#" class="card-link">Friends</a>
+            {{#each friends}}
+            <div class="card" style="width: 34rem;">
+                <div class="card-body">
+                    {{>user }}
+                    <a href="#" class="card-link">Mutual friends</a>
+                    {{#each mutual_friends}}
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            {{>user }}
+                            {{#if mutual_friends}}
+                            {{#each mutual_friends}}
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    {{>user }}
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/each}}
+                    {{>group }}
+                </div>
+            </div>
+            {{/each}}
+            {{>group }}
+        </div>
+    </div>
+    {{>line }}
+    {{/each}}
+</section>

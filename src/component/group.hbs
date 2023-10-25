@@ -1,0 +1,19 @@
+{{#if groups}}
+<a href="#" class="card-link">Groups</a>
+{{#each groups}}
+<div class="card" style="width: 34rem;">
+    <div class="card-body">
+        <h5 class="card-title">Group #{{id}}: {{name}}</h5>
+        <p class="card-text">{{description}}</p>
+        <a href="#" class="card-link">Members</a>
+        {{#each members}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                {{>user }}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/each}}
+{{/if}}
