@@ -1,0 +1,11 @@
+<div>
+    <address>
+        Address:
+        {{#with location}}
+        {{#if address}}
+        {{address}},
+        {{/if}}
+        {{city}}, {{country}}
+        {{/with}}
+    </address>
+</div>
