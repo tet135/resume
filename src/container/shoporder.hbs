@@ -1,0 +1,154 @@
+<main>
+    <div class="card mt-5 mb-5">
+        {{#with navigation}}
+        <ul class="nav">
+            {{#each links}}
+            <li class="nav-item">
+                {{#if href}}
+                <a class="nav-link" href={{href}}>{{text}}</a>
+                {{else}}
+                <a class="nav-link disabled">{{text}}</a>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+        {{/with}}
+    </div>
+    <h1 class="m-5">{{header}}</h1>
+    <section class="row">
+        <div class="col-8">
+            {{#with contacts_data}}
+            <h2>{{title}}</h2>
+            <div class="my-3">
+                {{#each buttons}}
+                {{#if isPrimary}}
+                <button class="btn btn-warning">{{text}}</button>
+                {{/if}}
+                {{#if isOutline}}
+                <button class="btn btn-outline-warning">{{text}}</button>
+                {{/if}}
+                {{/each}}
+            </div>
+
+            <div class="row">
+                {{#with form}}
+                {{#each input}}
+                <div class="col-6 mb-3">
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control" placeholder={{placeholder}}>
+                    <div class="form-text">
+                        {{caption}}
+                    </div>
+                </div>
+                {{/each}}
+                <hr>
+                {{#each switch}}
+                <div class="col-12">
+                    {{#if isActive}}
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">{{text}}</label>
+                    </div>
+                    {{else}}
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">{{text}}</label>
+                    </div>
+                    {{/if}}
+                </div>
+                {{/each}}
+                {{/with}}
+            </div>
+            {{/with}}
+
+            <hr class="pt-3">
+
+            {{#with delivery}}
+            <h2 class="pb-3">{{title}}</h2>
+            <div class="card p-3">
+                <div class="row">
+                    {{#each select}}
+                    <div class="col-6">
+                        <label class="form-label">{{label}}</label>
+                        <select class="form-select">
+                            <option selected>{{placeholder}}</option>
+                            {{#each options}}
+                            <option value={{value}}>{{text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{#each delivery_type}}
+            <div class="form-check pt-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    {{type}}
+                </label>
+            </div>
+            {{/each}}
+
+            <hr class="pt-3">
+
+            {{#with payment}}
+            <h2 class="pb-3">{{title}}</h2>
+            {{#each list}}
+            <div class="form-check pt-3">
+                <input class="form-check-input" type="radio" name="flexRadioPayment" id="flexRadioPayment" checked>
+                <label class="form-check-label" for="flexRadioPayment">
+                    {{type}}
+                </label>
+            </div>
+            {{#if description}}
+            <div class="form-text">
+                {{description}}
+            </div>
+            {{/if}}
+            {{/each}}
+            {{/with}}
+
+            <hr class="pt-3">
+
+            {{#with contact}}
+            <h2 class="pb-3">{{title}}</h2>
+            <div class="row">
+                {{#each contact}}
+                <div class="col-6 mb-3">
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control" placeholder={{placeholder}}>
+                    <div class="form-text">
+                        {{caption}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
+        </div>
+        <div class="col-4">
+            бокове меню зправа
+        </div>
+    </section>
+    <hr>
+    <footer class="row">
+        {{#each footer}}
+        <div class="col-2">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href={{[0].link}}>{{[0].text}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href={{[1].link}}>{{[1].text}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href={{[2].link}}>{{[2].text}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href={{[3].link}}>{{[3].text}}</a>
+                </li>
+            </ul>
+        </div>
+        {{/each}}
+    </footer>
+</main>
