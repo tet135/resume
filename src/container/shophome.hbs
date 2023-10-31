@@ -61,28 +61,6 @@
             {{/each}}
         </ul>
         {{>card}}
-        {{!-- {{#each cards}}
-        <div class="col-4">
-            <div class="card mb-3">
-                <img src={{image}} class="card-img-top" alt="item photo">
-                <div class="card-body">
-                    <h5 class="card-title">{{title}}
-                        {{#if isHot}}
-                        <span class="badge text-bg-warning rounded-pill text-light text-uppercase">
-                            hot!
-                        </span>
-                        {{/if}}
-                        {{#if isNew}}
-                        <span class="badge text-bg-primary rounded-pill text-capitalize">
-                            new
-                        </span>
-                        {{/if}}
-                    </h5>
-                    <p class="card-text">{{description}}</p>
-                </div>
-            </div>
-        </div>
-        {{/each}} --}}
         {{/with}}
         <hr class="mt-5">
         {{>subscribe }}
