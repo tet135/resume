@@ -16,6 +16,25 @@
 <body>
 	{{{body}}}
 
+	<footer class="row p-4
+	">
+		{{#each footer}}
+		<div class="col-2">
+			{{#each this}}
+			<ul class="nav flex-column">
+				<li class="nav-item">
+					{{#unless @last}}
+					<a class="nav-link" href={{link}}>{{text}}</a>
+					{{else}}
+					<a class="nav-link disabled" href={{link}}>{{text}}</a>
+					{{/unless}}
+				</li>
+			</ul>
+			{{/each}}
+		</div>
+		{{/each}}
+	</footer>
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

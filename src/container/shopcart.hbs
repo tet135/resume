@@ -1,0 +1,59 @@
+<main>
+    <div class="card mt-5 mb-5">
+        {{#with navigation}}
+        <ul class="nav">
+            {{#each links}}
+            <li class="nav-item">
+                <a class="nav-link" href={{href}}>{{text}}</a>
+            </li>
+            {{/each}}
+            <li>
+                <a class="nav-link disabled">Disabled</a>
+            </li>
+        </ul>
+        {{/with}}
+    </div>
+    <hr>
+    {{#with header}}
+    <h1>{{title}}</h1>
+    {{#with button}}
+    <div class="pb-3">
+        <a type="button" href={{link}} class="btn btn-outline-dark disabled">{{text}}</a>
+    </div>
+    {{/with}}
+    {{/with}}
+    <hr>
+    {{>cartGoodsItem}}
+    <hr>
+    {{#with total}}
+    <h2>{{title}}</h2>
+    <div class="h2">
+        <strong>
+            {{amount}}
+        </strong>
+    </div>
+    <p>{{delivery}}</p>
+    {{#each buttons}}
+    {{#if isSuccess}}
+    <div class="pb-3">
+        <a type="button" href={{link}} class="btn btn-success">{{text}}</a>
+    </div>
+    {{/if}}
+    {{#if isOutline}}
+    <div>
+        <a type="button" href={{link}} class="btn btn-outline-success">{{text}}</a>
+    </div>
+    {{/if}}
+    {{/each}}
+    {{/with}}
+    <hr>
+    {{#with goodsOtherBlock}}
+    <h2 class="text-center">{{title}}</h2>
+    <div class="row">
+        {{>card}}
+    </div>
+    {{/with}}
+    <hr>
+    {{>subscribe }}
+    <hr>
+</main>
