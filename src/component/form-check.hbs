@@ -1,0 +1,14 @@
+<p>{{title}}</p>
+{{#if input}}
+<div class="mb-3">
+    <input class="form-control" placeholder={{input.placeholder}}>
+</div>
+{{/if}}
+{{#each data}}
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="data">
+    <label class="form-check-label" for="data">
+        {{value}}
+    </label>
+</div>
+{{/each}}
