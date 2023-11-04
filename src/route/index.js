@@ -1547,7 +1547,7 @@ router.get('/task31', function (req, res) {
 
 router.get('/bootstrap', function (req, res) {
   res.render('bootstrap', {
-    layout: 'basic',
+    layout: 'bootstrap',
     page: {
       title: 'Резюме|bootstrap',
     },
