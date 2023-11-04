@@ -30,7 +30,7 @@
     <div class="row g-5">
         {{#each cards }}
         <div class="col-5">
-            <div class="card h-100" style="width: 18rem;">
+            <div class="card h-100">
                 <img src={{picture.src}} class=" card-img-top" alt={{picture.alt}}>
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
@@ -46,10 +46,9 @@
 {{>line}}
 <section>
     {{#with winner}}
-    <h2>
+    <h2 class="pb-3">
         {{title}}
     </h2>
-    <br>
     {{#with table}}
     <table class="table">
         <thead class="text-capitalize">
@@ -76,10 +75,9 @@
 {{>line }}
 <section>
     {{#with gallery}}
-    <h2>
+    <h2 class="pb-3">
         {{title}}
     </h2>
-    <br>
     <div class="row g-1">
         {{#each cards}}
         <div class="col-4">
@@ -105,14 +103,13 @@
 {{>line}}
 <section>
     {{#with relaxion}}
-    <div class="display-3">
+    <div class="display-3 pb-3">
         {{title}}
     </div>
-    <br>
     <div class="row gx-1 gy-4">
         {{#each cards}}
         <div class="col-5">
-            <div class="card text-bg-secondary mb-3 h-100" style="max-width: 18rem;">
+            <div class="card text-bg-secondary mb-3 h-100">
                 <div class="card-header">{{header}}</div>
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
@@ -158,7 +155,7 @@
     <div class="row gx-1 gy-3">
         {{#each card}}
         <div class="col-5">
-            <div class="card text-bg-warning text-light mb-3" style="max-width: 18rem;">
+            <div class="card text-bg-warning text-light mb-3">
                 <div class="card-header">{{header}}</div>
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
@@ -172,8 +169,7 @@
 </section>
 {{>line}}
 {{#with footer}}
-<h5>{{title}}</h5>
-<br>
+<h5 class="p-3">{{title}}</h5>
 <ul class="nav row">
     <li class="nav-item col-3">
         {{#each navigation}}
@@ -182,17 +178,17 @@
     </li>
     <li class="nav-item col-3">
         {{#each socialMedia}}
-        <a class="btn btn-outline-dark btn-sm" href={{link}}>{{name}}</a>
-        <br>
-        <br>
+        <div class="pb-3">
+            <a class="btn btn-outline-dark btn-sm" href={{link}}>{{name}}</a>
+        </div>
         {{/each}}
     </li>
-    <br>
     <li class="nav-item col-3">
         {{#each partners}}
-        <a class="btn btn-outline-info btn-sm" href={{link}}>{{name}}</a>
-        <br>
-        <br>
+        <div class="pb-3">
+            <a class="btn btn-outline-info btn-sm" href={{link}}>{{name}}</a>
+        </div>
+
         {{/each}}
     </li>
 </ul>

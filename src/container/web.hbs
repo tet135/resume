@@ -1,4 +1,4 @@
-<section>
+<main>
     <h1>IT Languages: what you need to know</h1>
     {{#with web}}
     <ul>
@@ -18,8 +18,7 @@
             <div>
                 {{#if elements}}
                 {{>title data="Elements:" }}
-                <br>
-                <div>
+                <div class="pt-3">
                     <ul>
                         {{#each elements}}
                         <li>
@@ -27,7 +26,6 @@
                             <div>
                                 Attributes:
                             </div>
-                            <br>
                             <ul>
                                 {{#each attributes}}
                                 <li>
@@ -44,8 +42,7 @@
             <div>
                 {{#if properties}}
                 {{>title data="Properties:" }}
-                <br>
-                <div>
+                <div class="pt-3">
                     <ul>
                         {{#each properties}}
                         <li>
@@ -53,7 +50,6 @@
                             <div>
                                 Values:
                             </div>
-                            <br>
                             <ul>
                                 {{#each values}}
                                 <li>
@@ -70,24 +66,21 @@
             <div>
                 {{#if functions}}
                 {{>title data="Functions:" }}
-                <br>
                 <div>
                     <ul>
                         {{#each functions}}
                         <li>
                             {{>attr }}
-                            <div>
+                            <div class="pb-3">
                                 Parameters:
                             </div>
-                            <br>
                             <ul>
                                 {{#each parameters}}
                                 <li>
                                     {{>attr }}
-                                    <div>
+                                    <div class="pb-3">
                                         Type: {{type}}
                                     </div>
-                                    <br>
                                 </li>
                                 {{/each}}
                             </ul>
@@ -101,6 +94,5 @@
         <hr>
         {{/each}}
     </ul>
-
     {{/with}}
-</section>
+</main>
