@@ -1,241 +1,255 @@
-<article>
-    <h1>{{make}}</h1>
-    <h2> Model: {{model}} </h2>
-
-    <div class="display-6">
-        Year: <date>{{year}}</date>
-        <br>
-        Color: {{color}}
-    </div>
-    <section>
-        <h2><span class="badge bg-secondary text-center">Features</span></h2>
-        {{#with features}}
-        <div class="card" style="width: 18rem;">
-            <div class="card-header text-capitalize text-bg-primary text-center">
-                interior
-            </div>
-            {{#with interior }}
-            <ul class="list-group list-group-flush text-capitalize">
-                <li class="list-group-item">
-                    <div class="card-header">
-                        seats
-                    </div>
-                    {{#with seats}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div> material: {{material}}</div>
-                            <div> color: {{color}}</div>
-                            <div> heated:
-                                {{>if data=heated}}
-                            </div>
-                            <div> ventelated:
-                                {{>if data=ventilated}}
-                            </div>
-                        </li>
-                    </ul>
-                    {{/with}}
-                </li>
-                <li class="list-group-item text-capitalize">
-                    <div class="card-header">
-                        dashboard
-                    </div>
-                    {{#with dashboard}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div> material: {{material}}</div>
-                            <div> color: {{color}}</div>
-                            <div> display:
-                                {{#with display}}
-                                <ul class="list-group list-group-flush">
+<main>
+    <article>
+        <h1>{{make}}</h1>
+        <h2> Model: {{model}} </h2>
+        <div class="display-6">
+            Year: <date>{{year}}</date>
+            <br>
+            Color: {{color}}
+        </div>
+        <div>
+            <h2><span class="badge bg-secondary text-center">Features</span></h2>
+            <div class="card p-0">
+                <div class="card-body">
+                    <div class="row">
+                        {{#with features}}
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header text-capitalize text-bg-primary text-center">
+                                    interior
+                                </div>
+                                {{#with interior }}
+                                <ul class="list-group list-group-flush text-capitalize">
                                     <li class="list-group-item">
-                                        <div> type: {{type}}</div>
-                                        <div> size: {{size}}</div>
-                                        <div> resolution: {{resolution}}</div>
-                                        <div> touchscreen:
-                                            {{>if data=touchscreen}}
+                                        <div class="card-header">
+                                            seats
                                         </div>
+                                        {{#with seats}}
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div> material: {{material}}</div>
+                                                <div> color: {{color}}</div>
+                                                <div> heated:
+                                                    {{>if data=heated}}
+                                                </div>
+                                                <div> ventelated:
+                                                    {{>if data=ventilated}}
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        {{/with}}
+                                    </li>
+                                    <li class="list-group-item text-capitalize">
+                                        <div class="card-header">
+                                            dashboard
+                                        </div>
+                                        {{#with dashboard}}
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div> material: {{material}}</div>
+                                                <div> color: {{color}}</div>
+                                                <div> display:
+                                                    {{#with display}}
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div> type: {{type}}</div>
+                                                            <div> size: {{size}}</div>
+                                                            <div> resolution: {{resolution}}</div>
+                                                            <div> touchscreen:
+                                                                {{>if data=touchscreen}}
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    {{/with}}
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        {{/with}}
+                                    </li>
+                                    <li class="list-group-item text-capitalize">
+                                        <div class="card-header">
+                                            audio
+                                        </div>
+                                        {{#with audio}}
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div> system: {{system}}</div>
+                                                <div> speakers: {{speakers}}</div>
+                                                <div> subwoofer:
+                                                    {{>if data=subwoofer}}
+                                                </div>
+                                                <div> bluetooth:
+                                                    {{>if data=bluetooth}}
+                                                </div>
+                                                <div> USB:
+                                                    {{>if data=USB}}
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        {{/with}}
                                     </li>
                                 </ul>
                                 {{/with}}
                             </div>
-                        </li>
-                    </ul>
-                    {{/with}}
-                </li>
-                <li class="list-group-item text-capitalize">
-                    <div class="card-header">
-                        audio
+                        </div>
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header text-capitalize text-bg-primary text-center">
+                                    exterior
+                                </div>
+                                {{#with exterior }}
+                                <ul class="list-group list-group-flush text-capitalize">
+                                    <li class="list-group-item">
+                                        <div class="card-header">
+                                            wheels
+                                        </div>
+                                        {{#with wheels}}
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div> size: {{size}}</div>
+                                                <div> type: {{type}}</div>
+                                                <div> color: {{color}} </div>
+                                            </li>
+                                        </ul>
+                                        {{/with}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="card-header">
+                                            headlights
+                                        </div>
+                                        {{#with headlights}}
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div> type: {{type}}</div>
+                                                <div> brightness: {{brightness}}</div>
+                                                <div> automatic:
+                                                    {{>if data=automatic}}
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        {{/with}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="card-header">
+                                            sunroof
+                                        </div>
+                                        {{#with sunroof}}
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div> type: {{type}}</div>
+                                                <div> size: {{size}}</div>
+                                                <div> automatic:
+                                                    {{>if data=automatic}}
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        {{/with}}
+                                    </li>
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header text-capitalize text-bg-primary text-center">
+                                    safety
+                                </div>
+                                {{#with safety }}
+                                <ul class="list-group list-group-flush ">
+                                    <li class="list-group-item">
+                                        <div class="card-header text-capitalize">
+                                            airbags
+                                        </div>
+                                        {{#with airbags}}
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item text-capitalize">
+                                                <div> front: {{front}}</div>
+                                                <div> side: {{side}}</div>
+                                                <div> knee: {{knee}} </div>
+                                                <div> rear: {{rear}} </div>
+                                            </li>
+                                        </ul>
+                                        {{/with}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="card-header text-capitalize">
+                                            assistance
+                                        </div>
+                                        {{#with assistance}}
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                Blind spot monitoring: {{>if data=blind_spot_monitoring}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                Rear cross traffic alert: {{>if data=rear_cross_traffic_alert}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                Lane departure warning: {{>if data=lane_departure_warning}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                Adaptive cruise control: {{>if data=adaptive_cruise_control}}
+                                            </li>
+                                            <li class="list-group-item">
+                                                Collision warning: {{>if data=collision_warning}}
+                                            </li>
+                                        </ul>
+                                        {{/with}}
+                                    </li>
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </div>
+                        {{/with}}
                     </div>
-                    {{#with audio}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div> system: {{system}}</div>
-                            <div> speakers: {{speakers}}</div>
-                            <div> subwoofer:
-                                {{>if data=subwoofer}}
-                            </div>
-                            <div> bluetooth:
-                                {{>if data=bluetooth}}
-                            </div>
-                            <div> USB:
-                                {{>if data=USB}}
-                            </div>
-                        </li>
-                    </ul>
-                    {{/with}}
-                </li>
+                </div>
 
-            </ul>
-            {{/with}}
-        </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header text-capitalize text-bg-primary text-center">
-                exterior
             </div>
-            {{#with exterior }}
-            <ul class="list-group list-group-flush text-capitalize">
-                <li class="list-group-item">
-                    <div class="card-header">
-                        wheels
-                    </div>
-                    {{#with wheels}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div> size: {{size}}</div>
-                            <div> type: {{type}}</div>
-                            <div> color: {{color}} </div>
-                        </li>
-                    </ul>
-                    {{/with}}
-                </li>
-                <li class="list-group-item">
-                    <div class="card-header">
-                        headlights
-                    </div>
-                    {{#with headlights}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div> type: {{type}}</div>
-                            <div> brightness: {{brightness}}</div>
-                            <div> automatic:
-                                {{>if data=automatic}}
-                            </div>
-                        </li>
-                    </ul>
-                    {{/with}}
-                </li>
-                <li class="list-group-item">
-                    <div class="card-header">
-                        sunroof
-                    </div>
-                    {{#with sunroof}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div> type: {{type}}</div>
-                            <div> size: {{size}}</div>
-                            <div> automatic:
-                                {{>if data=automatic}}
-                            </div>
-                        </li>
-                    </ul>
-                    {{/with}}
-                </li>
-
-            </ul>
-            {{/with}}
         </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header text-capitalize text-bg-primary text-center">
-                safety
-            </div>
-            {{#with safety }}
-            <ul class="list-group list-group-flush ">
-                <li class="list-group-item">
-                    <div class="card-header text-capitalize">
-                        airbags
-                    </div>
-                    {{#with airbags}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item text-capitalize">
-                            <div> front: {{front}}</div>
-                            <div> side: {{side}}</div>
-                            <div> knee: {{knee}} </div>
-                            <div> rear: {{rear}} </div>
-                        </li>
-                    </ul>
-                    {{/with}}
-                </li>
-                <li class="list-group-item">
-                    <div class="card-header text-capitalize">
-                        assistance
-                    </div>
-                    {{#with assistance}}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            Blind spot monitoring: {{>if data=blind_spot_monitoring}}
-                        </li>
-                        <li class="list-group-item">
-                            Rear cross traffic alert: {{>if data=rear_cross_traffic_alert}}
-                        </li>
-                        <li class="list-group-item">
-                            Lane departure warning: {{>if data=lane_departure_warning}}
-                        </li>
-                        <li class="list-group-item">
-                            Adaptive cruise control: {{>if data=adaptive_cruise_control}}
-                        </li>
-                        <li class="list-group-item">
-                            Collision warning: {{>if data=collision_warning}}
-                        </li>
-                    </ul>
-                    {{/with}}
-                </li>
-            </ul>
-            {{/with}}
-        </div>
-        {{/with}}
-    </section>
-    <section>
-        <h2><span class="badge bg-secondary text-capitalize">engine</span></h2>
-        {{#with engine}}
-        <ul class="list-group text-capitalize">
-            <li class="list-group-item">type: {{type}}</li>
-            <li class="list-group-item">displacement: {{displacement}}</li>
-            <li class="list-group-item">horsepower: {{horsepower}}</li>
-            <li class="list-group-item">torque: {{torque}} </li>
-            <li class="list-group-item">transmission type: {{transmission.type}}
-                <br>
-                transmission gears: {{transmission.gears}}
-            </li>
-        </ul>
-        {{/with}}
-    </section>
-    <section>
-        <h2><span class="badge bg-secondary text-capitalize">fuel economy</span></h2>
-        {{#with fuel_economy}}
-        <ul class="list-group text-capitalize">
-            <li class="list-group-item">city: {{city}}</li>
-            <li class="list-group-item">highway: {{highway}}</li>
-            <li class="list-group-item">combined: {{combined}}</li>
-        </ul>
-        {{/with}}
-    </section>
-    <section>
-        <h2><span class="badge bg-secondary text-capitalize">price</span></h2>
-        {{#with price}}
-        <ul class="list-group text-capitalize">
-            <li class="list-group-item "><strong>base: {{base}} $</strong></li>
-            <li class="list-group-item">destination: {{destination}} $</li>
-            <li class="list-group-item">options:
-                {{#with options}}
-                <ul>
-                    <li>navigation: {{navigation}} $</li>
-                    <li>moonroof: {{moonroof}} $</li>
-                    <li>premium paint: {{premium_paint}} $</li>
+        <div class="row">
+            <section class="col-4">
+                <h2><span class="badge bg-secondary text-capitalize">engine</span></h2>
+                {{#with engine}}
+                <ul class="list-group text-capitalize">
+                    <li class="list-group-item">type: {{type}}</li>
+                    <li class="list-group-item">displacement: {{displacement}}</li>
+                    <li class="list-group-item">horsepower: {{horsepower}}</li>
+                    <li class="list-group-item">torque: {{torque}} </li>
+                    <li class="list-group-item">transmission type: {{transmission.type}}
+                        <br>
+                        transmission gears: {{transmission.gears}}
+                    </li>
                 </ul>
                 {{/with}}
-            </li>
-            <li class="list-group-item">total: {{total}} $</li>
-        </ul>
-        {{/with}}
-    </section>
-</article>
+            </section>
+            <section class="col-4">
+                <h2><span class="badge bg-secondary text-capitalize">fuel economy</span></h2>
+                {{#with fuel_economy}}
+                <ul class="list-group text-capitalize">
+                    <li class="list-group-item">city: {{city}}</li>
+                    <li class="list-group-item">highway: {{highway}}</li>
+                    <li class="list-group-item">combined: {{combined}}</li>
+                </ul>
+                {{/with}}
+            </section>
+            <section class="col-4">
+                <h2><span class="badge bg-secondary text-capitalize">price</span></h2>
+                {{#with price}}
+                <ul class="list-group text-capitalize">
+                    <li class="list-group-item "><strong>base: {{base}} $</strong></li>
+                    <li class="list-group-item">destination: {{destination}} $</li>
+                    <li class="list-group-item">options:
+                        {{#with options}}
+                        <ul>
+                            <li>navigation: {{navigation}} $</li>
+                            <li>moonroof: {{moonroof}} $</li>
+                            <li>premium paint: {{premium_paint}} $</li>
+                        </ul>
+                        {{/with}}
+                    </li>
+                    <li class="list-group-item">total: {{total}} $</li>
+                </ul>
+                {{/with}}
+            </section>
+        </div>
+    </article>
+</main>

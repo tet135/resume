@@ -1,35 +1,18 @@
-{{!--
-Це код container файлу для summary сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
-
-<div>
+<main>
     {{#with main}}
-    <main>
-        <section>
-            {{>title data=sammary.title big=true}}
-            <div>
-                <p>
-                    {{sammary.text}}
-                </p>
-            </div>
-        </section>
-
-        {{#with experience}}
-        <section>
-            {{>title data=title big=false}}
-            <div>
-                <p>
-                    {{text}}
-                </p>
-            </div>
-        </section>
-        {{/with}}
-    </main>
+    <div>
+        {{>title data=sammary.title big=true}}
+        <p>
+            {{sammary.text}}
+        </p>
+    </div>
+    {{#with experience}}
+    <div>
+        {{>title data=title big=false}}
+        <p>
+            {{text}}
+        </p>
+    </div>
     {{/with}}
-</div>
-
-{{!--
-Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-Адже наш layout/default.hbs має вже структуру HTML
---}}
+    {{/with}}
+</main>

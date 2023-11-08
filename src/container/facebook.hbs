@@ -1,38 +1,43 @@
-<h1>facebook</h1>
-<section>
-    {{#each users}}
-    <div class="card" style="width: 36rem;">
-        <div class="card-body">
-            {{>user }}
-            <a href="#" class="card-link">Friends</a>
-            {{#each friends}}
-            <div class="card" style="width: 34rem;">
+<main>
+    <h1 class="text-capitalize">facebook</h1>
+    <div class="row pt-5">
+        {{#each users}}
+        <div class="col-6 pe-5">
+            <div class="card">
                 <div class="card-body">
                     {{>user }}
-                    <a href="#" class="card-link">Mutual friends</a>
-                    {{#each mutual_friends}}
-                    <div class="card" style="width: 18rem;">
+                    <a href="#" class="card-link">Friends</a>
+                    {{#each friends}}
+                    <div class="card mt-3">
                         <div class="card-body">
                             {{>user }}
-                            {{#if mutual_friends}}
+                            <a href="#" class="card-link">Mutual friends</a>
                             {{#each mutual_friends}}
-                            <div class="card" style="width: 18rem;">
+                            <div class="card mt-3">
                                 <div class="card-body">
                                     {{>user }}
+                                    {{#if mutual_friends}}
+                                    {{#each mutual_friends}}
+                                    <div class="card mt-3">
+                                        <div class="card-body">
+                                            {{>user }}
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                    {{/if}}
                                 </div>
                             </div>
                             {{/each}}
-                            {{/if}}
+                            {{>group }}
                         </div>
                     </div>
                     {{/each}}
                     {{>group }}
                 </div>
             </div>
-            {{/each}}
-            {{>group }}
         </div>
+        {{/each}}
     </div>
     {{>line }}
-    {{/each}}
-</section>
+
+</main>

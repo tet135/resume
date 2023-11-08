@@ -1,50 +1,67 @@
-<article>
-    <h1>{{name}}<span class="badge bg-secondary"></span></h1>
-    {{>line }}
-    <p>{{description}}</p>
-    <div>
-        Created by {{history.founder}} in <date>{{history.year}}</date>.
-    </div>
-    <section>
-        <h2><span class="badge bg-secondary">Types</span></h2>
-        {{>ul_new data=types}}
-    </section>
-    <section>
-        <h2><span class="badge bg-secondary">syntax</span></h2>
-        {{#with syntax}}
-        <h3>Variables: <span class="badge bg-secondary"></span></h3>
-        {{>ul_new data=variables }}
-        <h3>Functions: <span class="badge bg-secondary"></span></h3>
-        {{>ul_new data=functions }}
-        <h3>Conditionals: <span class="badge bg-secondary"></span></h3>
-        {{>ul_new data=conditionals }}
-        <h3>Loops: <span class="badge bg-secondary"></span></h3>
-        {{>ul_new data=loops }}
-        <h3>Classes: <span class="badge bg-secondary"></span></h3>
-        {{>ul_new data=classes }}
-        {{/with}}
-    </section>
-    <section>
-        <h2><span class="badge bg-secondary">Features</span></h2>
-        {{>ul_new data=features}}
-    </section>
-    <section>
-        <h2><span class="badge bg-secondary">Libraries</span></h2>
-        {{>ul_new data=libraries}}
-    </section>
-    <section>
-        <h2><span class="badge bg-secondary">Tools</span></h2>
-        {{>ul_new data=tools}}
-    </section>
-    <section>
-        <h2><span class="badge bg-secondary">Community</span></h2>
-        {{#each community}}
-        <ul class="list-group">
-            <li class="list-group-item">
-                {{name}} ({{type}})
-            </li>
-        </ul>
-        {{/each}}
-    </section>
-
-</article>
+<main>
+    <article>
+        <section>
+            <h1>{{name}}<span class="badge bg-secondary"></span></h1>
+            {{>line }}
+            <p>{{description}}</p>
+            <div>
+                Created by {{history.founder}} in <date>{{history.year}}</date>.
+            </div>
+        </section>
+        <section class="row">
+            <div class="col-3">
+                <h2><span class="badge bg-secondary">Types</span></h2>
+                {{>ul_new data=types}}
+            </div>
+            <div class="col-9">
+                {{#with syntax}}
+                <h2><span class="badge bg-secondary">Syntax</span></h2>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <h3>Variables: <span class="badge bg-secondary"></span></h3>
+                                {{>ul_new data=variables }}
+                                <h3>Functions: <span class="badge bg-secondary"></span></h3>
+                                {{>ul_new data=functions }}
+                            </div>
+                            <div class="col-4">
+                                <h3>Conditionals: <span class="badge bg-secondary"></span></h3>
+                                {{>ul_new data=conditionals }}
+                            </div>
+                            <div class="col-4">
+                                <h3>Loops: <span class="badge bg-secondary"></span></h3>
+                                {{>ul_new data=loops }}
+                                <h3>Classes: <span class="badge bg-secondary"></span></h3>
+                                {{>ul_new data=classes }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+            <div class="col-3">
+                <h2><span class="badge bg-secondary">Features</span></h2>
+                {{>ul_new data=features}}
+            </div>
+            <div class="col-3">
+                <h2><span class="badge bg-secondary">Libraries</span></h2>
+                {{>ul_new data=libraries}}
+            </div>
+            <div class="col-3">
+                <h2><span class="badge bg-secondary">Tools</span></h2>
+                {{>ul_new data=tools}}
+            </div>
+            <div class="col-3">
+                <h2><span class="badge bg-secondary">Community</span></h2>
+                {{#each community}}
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        {{name}} ({{type}})
+                    </li>
+                </ul>
+                {{/each}}
+            </div>
+        </section>
+    </article>
+</main>

@@ -39,8 +39,110 @@ var footer = {
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
+
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    page: {
+      title: 'shopreview',
+    },
+    author: {
+      name: 'Tetiana',
+      surname: 'Titko',
+    },
+    projectName: 'Resume project',
+    title: 'Список сторінок',
+    navigation: [
+      {
+        text: 'education',
+        link: '/education',
+      },
+      {
+        text: 'bio',
+        link: '/bio',
+      },
+      {
+        text: 'car',
+        link: '/car',
+      },
+      {
+        text: 'facebook',
+        link: '/facebook',
+      },
+      {
+        text: 'js',
+        link: '/js',
+      },
+      {
+        text: 'mac',
+        link: '/mac',
+      },
+      {
+        text: 'person',
+        link: '/person',
+      },
+      {
+        text: 'program',
+        link: '/program',
+      },
+      {
+        text: 'skills',
+        link: '/skills',
+      },
+      {
+        text: 'sammary',
+        link: '/summary',
+      },
+      {
+        text: 'web',
+        link: '/web',
+      },
+      {
+        text: 'work',
+        link: '/work',
+      },
+      {
+        text: 'skills',
+        link: '/skills',
+      },
+      {
+        text: 'task21',
+        link: '/task21',
+      },
+      {
+        text: 'task22',
+        link: '/task22',
+      },
+      {
+        text: 'task31',
+        link: '/task31',
+      },
+      {
+        text: 'shophome',
+        link: '/shophome',
+      },
+      {
+        text: 'shoporder',
+        link: '/shoporder',
+      },
+      {
+        text: 'shopcart',
+        link: '/shopcart',
+      },
+      {
+        text: 'shopprofile',
+        link: '/shopprofile',
+      },
+      {
+        text: 'shopreview',
+        link: '/shopreview',
+      },
+      {
+        text: 'shopcatalog',
+        link: '/shopcatalog',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -1445,7 +1547,7 @@ router.get('/task31', function (req, res) {
 
 router.get('/bootstrap', function (req, res) {
   res.render('bootstrap', {
-    layout: 'basic',
+    layout: 'bootstrap',
     page: {
       title: 'Резюме|bootstrap',
     },
@@ -3056,7 +3158,6 @@ router.get('/shopcatalog', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-
 /// ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -3351,5 +3452,6 @@ router.get('/shopreview', function (req, res) {
 })
 
 // ================================================================
+
 // Підключаємо роутер до бек-енду
 module.exports = router
