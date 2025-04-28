@@ -1,21 +1,5 @@
 <main>
     <div class="row g-2">
-        <div class="card mt-5 mb-5">
-            <div class="col-4">
-                {{#with navigation}}
-                <ul class="nav">
-                    {{#each links}}
-                    <li class="nav-item">
-                        <a class="nav-link" href={{href}}>{{text}}</a>
-                    </li>
-                    {{/each}}
-                    <li>
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
-                </ul>
-                {{/with}}
-            </div>
-        </div>
         {{#with newsBlock}}
         <h1 class="text-center mb-3">
             {{title}}

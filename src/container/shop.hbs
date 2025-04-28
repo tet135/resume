@@ -1,0 +1,25 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<main>
+    {{>link text="Go to other projects" noLine=true}}
+    <br></br>
+    <h1>{{title}}</h1>
+    <p class="py-5">
+        Here is some pages for shop functional.
+    </p>
+    {{#each navigation}}
+    <div class="pb-3 d-grid gap-2 col-2">
+        <a type="button" class="btn btn-primary" href={{link}}>{{text}}</a>
+    </div>
+    {{/each}}
+</main>
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}

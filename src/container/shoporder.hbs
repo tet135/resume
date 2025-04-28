@@ -1,19 +1,4 @@
 <main>
-    <div class="card mt-5 mb-5">
-        {{#with navigation}}
-        <ul class="nav">
-            {{#each links}}
-            <li class="nav-item">
-                {{#if href}}
-                <a class="nav-link" href={{href}}>{{text}}</a>
-                {{else}}
-                <a class="nav-link disabled">{{text}}</a>
-                {{/if}}
-            </li>
-            {{/each}}
-        </ul>
-        {{/with}}
-    </div>
     <h1 class="m-5">{{header}}</h1>
     <section class="row">
         <div class="col-8">
