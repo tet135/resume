@@ -11,14 +11,14 @@ const router = express.Router()
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/css', function (req, res) {
+router.get('/other', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('css', {
+  res.render('other', {
     layout: 'index',
     page: {
-      title: 'css',
+      title: 'other',
     },
     author: {
       name: 'Tetiana',
@@ -26,7 +26,7 @@ router.get('/css', function (req, res) {
     },
     href: '/',
     projectName: 'Project',
-    title: 'CSS projects',
+    title: 'more pages...',
     navigation: [
       {
         text: 'bio',
@@ -65,12 +65,12 @@ router.get('/css', function (req, res) {
         link: '/task21',
       },
       {
-        text: 'task22',
-        link: '/task22',
+        text: 'startup',
+        link: '/startup',
       },
       {
-        text: 'task31',
-        link: '/task31',
+        text: 'business',
+        link: '/business',
       },
     ],
   })
@@ -920,11 +920,11 @@ router.get('/js', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 }) /
-  router.get('/task22', function (req, res) {
+  router.get('/startup', function (req, res) {
     // res.render генерує нам HTML сторінку
 
     //            ↙ cюди вводимо назву файлу з сontainer
-    res.render('task22', {
+    res.render('startup', {
       layout: 'basic',
 
       page_header: {
@@ -1055,26 +1055,26 @@ router.get('/task21', function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/task31', function (req, res) {
+router.get('/business', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('task31', {
+  res.render('business', {
     layout: 'basic',
 
     navigation: {
       links: [
         {
           text: 'Home',
-          href: 'https://github.com/',
+          href: '/other',
         },
         {
           text: 'Contacts',
-          href: 'https://www.google.com/',
+          href: '#',
         },
         {
           text: 'Help',
-          href: 'https://www.youtube.com/',
+          href: 'https://www.google.com/',
         },
       ],
       button: {

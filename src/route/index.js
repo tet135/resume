@@ -7,7 +7,7 @@ const router = express.Router()
 // ================================================================
 const shop = require('./shop')
 const resume = require('./resume')
-const css = require('./css')
+const css = require('./other')
 
 // Об'єднайте файли роутів за потреби
 router.use('/', shop)
@@ -44,8 +44,8 @@ router.get('/', function (req, res) {
         link: '/shop',
       },
       {
-        text: 'CSS trainings',
-        link: '/css',
+        text: 'Other trainings',
+        link: '/other',
       },
     ],
   })
